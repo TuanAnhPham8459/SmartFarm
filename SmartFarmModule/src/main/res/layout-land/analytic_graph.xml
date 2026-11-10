@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/tvAnalyticsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Analytics"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnRefresh"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_refresh"
+        app:tint="?attr/colorOnSurface"
+        android:contentDescription="Refresh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvAnalyticsTitle"
+        app:layout_constraintBottom_toBottomOf="@id/tvAnalyticsTitle" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:baselineAligned="false"
+        app:layout_constraintTop_toBottomOf="@id/tvAnalyticsTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- LEFT COLUMN: Tabs and Chart -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical"
+            android:paddingEnd="8dp">
+
+            <HorizontalScrollView
+                android:id="@+id/hsvSensorTabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp">
+                    <TextView android:id="@+id/temperatureTab" android:text="@string/temperature" android:background="@drawable/history_tab_background" android:textColor="@android:color/white" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:layout_marginEnd="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/humidityTab" android:text="@string/humidity" android:background="@drawable/unselected_tab_background" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:layout_marginEnd="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/soilTab" android:text="@string/soil_moisture" android:background="@drawable/unselected_tab_background" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:layout_marginEnd="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/lightTab" android:text="@string/light" android:background="@drawable/unselected_tab_background" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:id="@+id/hsvPeriodTabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp">
+                    <TextView android:id="@+id/todayTab" android:text="@string/today" android:background="@drawable/history_tab_background" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:layout_marginEnd="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/weekTab" android:text="@string/_24_hour" android:background="@drawable/history_tab_background" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:layout_marginEnd="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/monthTab" android:text="@string/_7_days" android:background="@drawable/history_tab_background" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:layout_marginEnd="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/yearTab" android:text="@string/_30_days" android:background="@drawable/history_tab_background" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:layout_marginEnd="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/customTab" android:text="@string/custom" android:background="@drawable/history_tab_background" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/tvSensorTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/temperature_c"
+                android:textStyle="bold"
+                android:textColor="?android:attr/textColorPrimary"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/tempChart"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- RIGHT COLUMN: Stats and List -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="8dp">
+
+            <TextView
+                android:id="@+id/tvDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date Label"
+                android:textSize="12sp"
+                android:textColor="?android:attr/textColorSecondary"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:layout_margin="2dp" app:cardBackgroundColor="?attr/colorSurface" app:cardCornerRadius="8dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Min" android:textSize="10sp"/>
+                        <TextView android:id="@+id/tvMinValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="14sp" android:textColor="?android:attr/textColorPrimary"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:layout_margin="2dp" app:cardBackgroundColor="?attr/colorSurface" app:cardCornerRadius="8dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Max" android:textSize="10sp"/>
+                        <TextView android:id="@+id/tvMaxValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="14sp" android:textColor="?android:attr/textColorPrimary"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:layout_margin="2dp" app:cardBackgroundColor="?attr/colorSurface" app:cardCornerRadius="8dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Avg" android:textSize="10sp"/>
+                        <TextView android:id="@+id/tvAvgValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--" android:textStyle="bold" android:textSize="14sp" android:textColor="?android:attr/textColorPrimary"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Recent Records"
+                android:textStyle="bold"
+                android:textColor="?android:attr/textColorPrimary"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recentRecords"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

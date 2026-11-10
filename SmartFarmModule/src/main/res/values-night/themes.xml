@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SmartFarm" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="android:colorBackground">@color/_121212</item>
+        <item name="colorSurface">@color/_1e1e1e</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorSecondaryContainer">@color/_2c2c2c</item>
+        <item name="colorOutline">@color/gray</item>
+
+        <!-- Status bar settings -->
+        <item name="android:statusBarColor">@color/_121212</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.SmartFarm" parent="Base.Theme.SmartFarm" />
+
+    <style name="SplashScreen" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/_121212</item>
+        <item name="splashIcon">@drawable/dark_theme_icon</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+</resources>

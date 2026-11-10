@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- Preferences Section -->
+
+    <PreferenceCategory
+        android:title="Preferences">
+
+
+        <SwitchPreferenceCompat
+            android:key="portrait_lock"
+            android:title="Portrait Lock"
+            android:summary="Lock the app in portrait mode"
+            android:icon="@drawable/ic_lock"
+            android:defaultValue="true"/>
+
+
+        <ListPreference
+            android:key="units"
+            android:title="Units"
+            android:summary="Choose your preferred unit"
+            android:entries="@array/unit_entries"
+            android:entryValues="@array/unit_values"
+            android:defaultValue="celsius"
+            android:icon="@drawable/ic_unit"/>
+
+
+        <SwitchPreferenceCompat
+            android:key="notifications"
+            android:title="Notifications"
+            android:summary="Manage alert notifications"
+            android:defaultValue="true"
+            android:icon="@drawable/ic_notif"/>
+
+
+    </PreferenceCategory>
+
+
+
+    <!-- App Settings -->
+
+    <PreferenceCategory
+        android:title="App Settings">
+
+
+        <ListPreference
+            android:key="theme"
+            android:title="Theme"
+            android:summary="Choose app theme"
+            android:entries="@array/theme_entries"
+            android:entryValues="@array/theme_values"
+            android:defaultValue="light"
+            android:icon="@drawable/ic_theme"/>
+
+
+        <Preference
+            android:key="about"
+            android:title="About App"
+            android:summary="Version 1.0.0"
+            android:icon="@drawable/ic_about"/>
+
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

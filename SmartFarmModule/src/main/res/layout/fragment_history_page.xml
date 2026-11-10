@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:fillViewport="true">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+
+        android:padding="12dp">
+
+
+        <!-- Graph -->
+
+        <com.github.mikephil.charting.charts.LineChart
+
+            android:id="@+id/historyChart"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="300dp"/>
+
+
+
+        <!-- Records Title -->
+
+        <TextView
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:text="@string/recent_records"
+
+            android:textSize="20sp"
+
+            android:textStyle="bold"
+
+            android:layout_marginTop="16dp"/>
+
+
+
+        <!-- Records List -->
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/historyRecords"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:nestedScrollingEnabled="false"/>
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

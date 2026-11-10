@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SmartFarm" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/green</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSecondaryContainer">@color/white</item>
+        <item name="colorOutline">@color/light_gray</item>
+
+        <!-- Status bar settings -->
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="CustomOverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.SmartFarm" parent="Base.Theme.SmartFarm" />
+
+    <style name="SplashScreen" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="splashIcon">@drawable/light_theme_icon</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+</resources>

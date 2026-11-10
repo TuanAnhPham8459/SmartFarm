@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="lavender">#8692f7</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="red">#FF0000</color>
+    <color name="splashBackground">#FFFFFFFF</color>
+    <color name="_888888">#888888</color>
+    <color name="_00e676">#00E676</color>
+    <color name="_212121">#212121</color>
+    <color name="_121212">#121212</color>
+    <color name="ffffff">#FFFFFF</color>
+    <color name="_1e1e1e">#1E1E1E</color>
+    <color name="ff5722">#FF5722</color>
+    <color name="_2c2c2c">#2C2C2C</color>
+    <color name="_1a00e676">#1A00E676</color>
+    <color name="aaaaaa">#AAAAAA</color>
+    <color name="ff5252">#FF5252</color>
+    <color name="_03a9f4">#03A9F4</color>
+    <color name="_78909c">#78909C</color>
+    <color name="gray">#666666</color>
+    <color name="light_gray">#DDDDDD</color>
+    <color name="green">#4CAF50</color>
+    <color name="wood_light">#CDAF95</color>
+    <color name="wood_night">#AD8B65</color>
+    <color name="dark_green">#2E7D32</color>
+    <color name="light_green">#81C784</color>
+    <color name="orange">#F9A225</color>
+    <color name="design_error_red">#B00020</color>
+    <color name="gray_disabled">#BDBDBD</color>
+
+    <!-- Semantic Status Colors -->
+    <color name="status_ok">#4CAF50</color>
+    <color name="status_warning">#F9A825</color>
+    <color name="status_error">#D32F2F</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+
+
+
+</resources>

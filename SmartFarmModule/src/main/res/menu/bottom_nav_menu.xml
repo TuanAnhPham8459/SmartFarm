@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/bottom_dashboard"
+        android:icon="@drawable/ic_climate_analytics"
+        android:title="@string/analytic_graph" />
+
+    <item
+        android:id="@+id/bottom_settings"
+        android:icon="@drawable/control_panel"
+        android:title="@string/control_panel" />
+
+    <item
+        android:id="@+id/bottom_alert"
+        android:icon="@drawable/ic_notif"
+        android:title="@string/alerts" />
+
+</menu>

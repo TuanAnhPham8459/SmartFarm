@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "747181379636",
+    "project_id": "smartfarm-ceng322-8",
+    "storage_bucket": "smartfarm-ceng322-8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747181379636:android:41044b006a77687ddffa61",
+        "android_client_info": {
+          "package_name": "ca.iot.innovators.smart.farm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747181379636-envefk7j6sk1smi9rspjbhs9ptoa4c0p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.iot.innovators.smart.farm",
+            "certificate_hash": "ba55a7145532d80f49b7196f10e9371d6660f840"
+          }
+        },
+        {
+          "client_id": "747181379636-mkr0heac7nlmm0o303herr3rk3ng5k50.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.iot.innovators.smart.farm",
+            "certificate_hash": "7701bb30c0f91f3723ebd22f06502911a0d454bb"
+          }
+        },
+        {
+          "client_id": "747181379636-s1nnsr0s7au1n39nick47pntb0pnsf64.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.iot.innovators.smart.farm",
+            "certificate_hash": "4aba5cf6af9a98816e5c51d35407e269d0d04a3b"
+          }
+        },
+        {
+          "client_id": "747181379636-se7tli4q2dilk2nq8u862fgmrq6u4fm2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ca.iot.innovators.smart.farm",
+            "certificate_hash": "963ca383cf1dcf1fb0b9a4357bb755b1f4480949"
+          }
+        },
+        {
+          "client_id": "747181379636-siqla3jv5c9i1e0g4it01mag4keu30fi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM_-3lUgPMFeMRqC4sqGbMUcpEf6YiaQ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747181379636-siqla3jv5c9i1e0g4it01mag4keu30fi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,352 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header with Refresh -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analytics"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="?android:attr/textColorPrimary"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:id="@+id/btnRefresh"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_refresh"
+                app:tint="?attr/colorOnSurface"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="Refresh"/>
+        </RelativeLayout>
+
+
+        <!-- Sensor Tabs -->
+        <HorizontalScrollView
+            android:id="@+id/hsvSensorTabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+
+                <TextView
+                    android:id="@+id/temperatureTab"
+                    android:text="@string/temperature"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/history_tab_background"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="10dp"
+                    android:elevation="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:id="@+id/humidityTab"
+                    android:text="@string/humidity"
+                    android:background="@drawable/unselected_tab_background"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="10dp"
+                    android:elevation="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:id="@+id/soilTab"
+                    android:text="@string/soil_moisture"
+                    android:background="@drawable/unselected_tab_background"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="10dp"
+                    android:elevation="6dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:id="@+id/lightTab"
+                    android:text="@string/light"
+                    android:background="@drawable/unselected_tab_background"
+                    android:paddingHorizontal="15dp"
+                    android:paddingVertical="10dp"
+                    android:elevation="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+
+        <!-- Range Tabs -->
+        <HorizontalScrollView
+            android:id="@+id/hsvPeriodTabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/todayTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/history_tab_background"
+                android:elevation="6dp"
+                android:paddingHorizontal="22dp"
+                android:paddingVertical="10dp"
+                android:text="@string/today"
+                android:textColor="?android:attr/textColorSecondary" />
+
+
+            <TextView
+                android:id="@+id/weekTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/history_tab_background"
+                android:elevation="6dp"
+                android:paddingHorizontal="22dp"
+                android:paddingVertical="10dp"
+                android:text="@string/_24_hour"
+                android:textColor="?android:attr/textColorSecondary" />
+
+
+            <TextView
+                android:id="@+id/monthTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/history_tab_background"
+                android:elevation="6dp"
+                android:paddingHorizontal="22dp"
+                android:paddingVertical="10dp"
+                android:text="@string/_7_days"
+                android:textColor="?android:attr/textColorSecondary" />
+
+            <TextView
+                android:id="@+id/yearTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/history_tab_background"
+                android:elevation="6dp"
+                android:paddingHorizontal="22dp"
+                android:paddingVertical="10dp"
+                android:text="@string/_30_days"
+                android:textColor="?android:attr/textColorSecondary" />
+
+
+            <TextView
+                android:text="@string/custom"
+                android:id="@+id/customTab"
+                android:background="@drawable/history_tab_background"
+                android:paddingHorizontal="22dp"
+                android:paddingVertical="10dp"
+                android:elevation="6dp"
+                android:layout_marginEnd="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        </HorizontalScrollView>
+
+
+        <TextView
+            android:id="@+id/tvDateLabel"
+            android:text="@string/may_8_2025"
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorSecondary"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+        <TextView
+            android:id="@+id/tvSensorTitle"
+            android:text="@string/temperature_c"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+        <!-- Chart -->
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/tempChart"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"/>
+
+
+
+        <!-- Statistics -->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                android:layout_width="0dp"
+                android:layout_height="70dp">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="@string/min"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent" />
+
+                    <TextView
+                        android:id="@+id/tvMinValue"
+                        android:text="@string/_22_1_c"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                android:layout_width="0dp"
+                android:layout_height="70dp">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="@string/max"
+                        android:gravity="center"
+                        android:layout_height="40dp"
+                        android:layout_width="match_parent" />
+
+                    <TextView
+                        android:id="@+id/tvMaxValue"
+                        android:text="@string/_32_6_c"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                android:layout_width="0dp"
+                android:layout_height="70dp">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="@string/average"
+                        android:layout_height="40dp"
+                        android:layout_width="match_parent"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/tvAvgValue"
+                        android:text="@string/_27_4_c"
+                        android:textStyle="bold"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:text="@string/recent_records"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recentRecords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
