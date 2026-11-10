@@ -1,8 +1,25 @@
-# IoT Innovators
-# Chau Vi Cuong Nguyen	N01634611
-# Hoang Tran	        N01613506
-# Truong An Nguyen	    N01639800
-# Tuan Anh Pham         N01238459
+# IoT Innovators - Smart Farm
+
+### Secrets: never commit these ###
+# Firebase Android config (each developer adds their own)
+google-services.json
+# Firebase / Google Cloud service account keys used by the Pi firmware
+*firebase-adminsdk*.json
+*service-account*.json
+*serviceAccount*.json
+# Environment files and private keys
+.env
+.env.*
+*.pem
+*.key
+*.p12
+
+### Python (Raspberry Pi firmware) ###
+__pycache__/
+*.pyc
+venv/
+.venv/
+oled-env/
 
 # Created by https://www.toptal.com/developers/gitignore/api/androidstudio
 # Edit at https://www.toptal.com/developers/gitignore?templates=androidstudio
@@ -59,8 +76,6 @@ captures/
 *.jks
 *.keystore
 
-# Google Services (e.g. APIs or Firebase)
-# google-services.json
 
 # Android Patch
 gen-external-apklibs

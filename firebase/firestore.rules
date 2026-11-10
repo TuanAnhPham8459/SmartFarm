@@ -1,0 +1,28 @@
+rules_version = '2';
+
+// Smart Farm - recommended Firestore security rules.
+// Paste these into Firebase console > Firestore Database > Rules, then click Publish.
+//
+// - Only signed-in app users can read or write data.
+// - Anyone who is not signed in is denied (no "test mode" open access).
+// - The Raspberry Pi uploads with a service account (Admin SDK), which is not
+//   affected by these rules, so sensor uploads keep working.
+//
+// Test in the Rules Playground before publishing.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Feedback: signed-in users can submit, but not read or change others' feedback.
+    match /feedback/{feedbackId} {
+      allow create: if request.auth != null;
+      allow read, update, delete: if false;
+    }
+
+    // Everything else the app uses (devices, sensor_data, readings, history...):
+    // signed-in users only.
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
